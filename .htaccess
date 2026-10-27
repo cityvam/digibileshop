@@ -1,0 +1,44 @@
+Options -Indexes
+RewriteEngine On
+RewriteBase /
+
+# (جدید) ریدایرکت کردن index.php به ریشه سایت
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ %{REQUEST_SCHEME}://%{HTTP_HOST}/ [R=301,L]
+
+# (جدید) ریدایرکت کردن products.php به /products/
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /products\.php[?\ ]
+RewriteRule ^products\.php$ /products/ [R=301,L]
+
+# (جدید) ریمایت داخلی /products/ به products.php
+RewriteRule ^products/?$ products.php [L,QSA]
+
+# (جدید) ریدایرکت کردن articles.php به /articles/
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /articles\.php[?\ ]
+RewriteRule ^articles\.php$ /articles [R=301,L]
+
+# (جدید) ریمایت داخلی /articles/ به articles.php
+RewriteRule ^articles/?$ articles.php [L,QSA]
+
+# اگر درخواست برای یک فایل یا پوشه واقعی نیست، آن را به index.php هدایت کن
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# (تغییر) ریدایرکت کردن درخواست‌های صفحات داینامیک به page.php (با پشتیبانی از حروف فارسی)
+RewriteRule ^page/([^/]+)/?$ page.php?slug=$1 [L,QSA]
+
+# ریدایرکت درخواست‌های article به article.php
+RewriteRule ^article/([^/]+)/?$ article.php?slug=$1 [L,QSA]
+
+# ریدایرکت کردن درخواست‌های محصول به فایل product.php (قانون اصلی)
+RewriteRule ^product-([0-9]+)/?(.*)$ product.php?id=$1 [L,QSA]
+
+# جلوگیری از لیست شدن فایل‌ها و پوشه‌ها
+IndexIgnore *
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php83” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php83 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

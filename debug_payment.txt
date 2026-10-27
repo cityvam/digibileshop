@@ -1,0 +1,25 @@
+[2026-02-16 15:30:02] Order ID: 148, Total: 255645000.00, Credit: 2000000.00, Credit ID: 10
+Inside refund block logic for Order 148
+Refund successful. Rows: 1
+Refund transaction logged.
+[2026-02-16 15:31:14] Order ID: 148, Total: 3621000.00, Credit: 2000000.00, Credit ID: 10
+Inside refund block logic for Order 148
+Refund successful. Rows: 1
+Refund transaction logged.
+[2026-02-18 07:50:25] Order ID: 263, Total: 39964000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
+Skipping credit refund: applied_credit=0.00, applied_credit_id=0
+[2026-02-24 18:52:36] Order ID: 156, Total: 10000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
+[2026-02-25 14:09:56] Order ID: 176, Total: 10000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
+Skipping credit refund: applied_credit=0.00, applied_credit_id=0
+[2026-07-18 21:06:45] Order ID: 540, Total: 287432000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
+Skipping credit refund: applied_credit=0.00, applied_credit_id=0
+[2026-07-20 07:24:11] Order ID: 548, Total: 26249000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
+[2026-07-23 02:05:11] Order ID: 552, Total: 26249000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
+[2026-08-26 01:28:34] Order ID: 605, Total: 100000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
+[2026-08-26 16:26:23] Order ID: 608, Total: 4510000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
+Skipping credit refund: applied_credit=0.00, applied_credit_id=0
+[2026-09-06 01:03:05] Order ID: 620, Total: 28589000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
+Skipping credit refund: applied_credit=0.00, applied_credit_id=0
+[2026-09-12 17:35:09] Order ID: 630, Total: 200000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
+[2026-09-29 23:58:50] Order ID: 646, Total: 20000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
+[2026-09-30 00:22:40] Order ID: 647, Total: 30000.00, Credit: 0.00, Wallet: 0.00, Discount: 0.00, Credit ID: 0
