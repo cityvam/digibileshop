@@ -1,0 +1,222 @@
+/* Import Vazir font */
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Regular.eot');
+    src: url('../fonts/Vazir-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Vazir-Regular.woff2') format('woff2'),
+         url('../fonts/Vazir-Regular.woff') format('woff'),
+         url('../fonts/Vazir-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Bold.eot');
+    src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Vazir-Bold.woff2') format('woff2'),
+         url('../fonts/Vazir-Bold.woff') format('woff'),
+         url('../fonts/Vazir-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Black.eot');
+    src: url('../fonts/Vazir-Black.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Vazir-Black.woff2') format('woff2'),
+         url('../fonts/Vazir-Black.woff') format('woff'),
+         url('../fonts/Vazir-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Medium.eot');
+    src: url('../fonts/Vazir-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Vazir-Medium.woff2') format('woff2'),
+         url('../fonts/Vazir-Medium.woff') format('woff'),
+         url('../fonts/Vazir-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Light.eot');
+    src: url('../fonts/Vazir-Light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Vazir-Light.woff2') format('woff2'),
+         url('../fonts/Vazir-Light.woff') format('woff'),
+         url('../fonts/Vazir-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir-Thin.eot');
+    src: url('../fonts/Vazir-Thin.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Vazir-Thin.woff2') format('woff2'),
+         url('../fonts/Vazir-Thin.woff') format('woff'),
+         url('../fonts/Vazir-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Vazir', sans-serif;
+}
+
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Custom Sidebar Styles */
+.sidebar-nav .nav-link {
+    border-radius: .25rem;
+    margin-bottom: 2px;
+}
+
+.sidebar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-nav .nav-link:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-nav .collapse .nav-link {
+    font-size: 0.9em;
+}
+
+.sidebar-nav .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when dropdown is open (not collapsed) */
+.sidebar-nav a[data-bs-toggle="collapse"]:not(.collapsed) .arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* Animation for scraping status modal */
+.status-icon {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.status-icon.fade-in {
+    opacity: 1;
+}
+
+/* Frosted glass effect for modal backdrop */
+.modal-backdrop-blur {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+/* Custom style for scraping status modal items */
+.modal-status-item {
+    font-size: 0.95rem; /* Slightly smaller font */
+    font-weight: 500;   /* Medium font weight */
+}
+
+/* Modern status modal style */
+.modal-status-content {
+    border: none;
+    border-radius: var(--bs-border-radius-lg);
+    box-shadow: var(--bs-box-shadow-lg);
+}
+
+/* Smaller font for product table */
+.table-products {
+    font-size: 0.9rem;
+}
+
+/* --- استایل برای کارت‌های انتخاب روش افزودن هوشمند --- */
+.smart-insert-option {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.smart-insert-option:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--bs-box-shadow);
+}
+
+.fade-in-status {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- استایل برای کارت‌های محصولات در صفحه افزودن گروهی --- */
+.product-card {
+    position: relative;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    border: 1px solid var(--bs-border-color-translucent); /* افزودن بوردر طوسی کمرنگ پیش‌فرض */
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--bs-box-shadow);
+}
+.product-card.is-duplicate {
+    background-color: var(--bs-gray-200); /* کمی تیره‌تر برای وضوح بیشتر */
+    cursor: default; /* تغییر نشانگر موس به حالت پیش‌فرض */
+    opacity: 0.5; /* کم‌رنگ‌تر کردن بیشتر */
+    cursor: not-allowed; /* تغییر نشانگر موس به حالت غیرمجاز */
+    opacity: 0.6; /* کم‌رنگ‌تر کردن */
+}
+.product-card.is-duplicate:hover {
+    transform: none; /* حذف افکت هاور */
+    box-shadow: none; /* حذف افکت هاور */
+}
+.product-card.is-selected {
+    background-color: var(--bs-primary-bg-subtle); /* تغییر رنگ پس‌زمینه کارت */
+    border-color: var(--bs-primary-border-subtle); /* تغییر رنگ حاشیه */
+    transform: scale(1.02); /* کمی بزرگنمایی برای تاکید */
+}
+.product-card .card-img-top {
+    height: 150px; /* کاهش ارتفاع تصویر */
+    object-fit: contain;
+    padding: 0.5rem;
+}
+.product-card-title {
+    font-size: 0.85rem; /* کمی بزرگ‌تر کردن فونت عنوان */
+    line-height: 1.4;
+    font-weight: 500; /* استفاده از وزن متوسط فونت وزیر */
+}
+.product-card-checkbox {
+    display: none; /* مخفی کردن چک‌باکس */
+}
+
+/* --- استایل برای نوار شناور افزودن محصول --- */
+.floating-import-bar {
+    position: fixed;
+    bottom: 1rem; /* فاصله از پایین */
+    left: 50%; /* در مرکز افقی قرار بگیرد */
+    transform: translateX(-50%); /* تنظیم دقیق مرکزیت */
+    width: 95%;
+    max-width: 800px; /* حداکثر عرض برای صفحات بزرگ */
+    height: 80px;
+    background-color: #212529; /* Dark background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1040; /* Below modals */
+    border-radius: 1rem; /* گرد کردن گوشه‌ها */
+    animation: slide-up 0.3s forwards ease-out;
+}
+@keyframes slide-up {
+    from { transform: translate(-50%, 150%); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+/* --- استایل برای جدول نتایج افزودن گروهی --- */
+.table-results {
+    font-size: 0.85rem;
+}

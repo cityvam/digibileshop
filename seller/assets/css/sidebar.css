@@ -1,0 +1,349 @@
+/* =================================================================
+   Custom Sidebar Styles
+   ================================================================= */
+
+/* Basic setup for the main layout */
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: #FFFFFF; /* White background as per image */
+    border-left: 1px solid #dee2e6;
+    padding: 1rem;
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    /* background-color is now on the body */
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    text-align: right; /* Align logo to the right */
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    padding-right: 0.5rem; /* Add some padding for the logo */
+}
+
+.sidebar-logo {
+    max-width: 100px; /* Adjusted size */
+    height: auto;
+}
+
+.sidebar-brand-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar-nav-item {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem; /* Rounded corners for links */
+    text-decoration: none;
+    color: #495057; /* Default text color */
+    font-weight: 600; /* Slightly bolder font */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav-link:hover {
+    background-color: #e9ecef; /* Light hover effect */
+    color: #212529;
+}
+
+/* Active link style */
+.sidebar-nav-link.active {
+    background-color: #e9f2ff; /* Light blue background for active item */
+    color: #0052cc; /* Blue text for active item */
+    font-weight: 700; /* Bolder for active item */
+}
+
+.sidebar-nav-link.active .nav-icon {
+    color: #0d6efd; /* Blue icon for active item */
+}
+
+/* Icon styles */
+.nav-icon {
+    font-size: 1.2rem;
+    margin-right: 1rem; /* Space between icon and text in RTL */
+    width: 24px; /* Fixed width for alignment */
+    text-align: center;
+    color: #505f79; /* Slightly darker icon color */
+    transition: color 0.2s ease;
+}
+
+/* Dropdown arrow for collapsible menus (RTL fix) */
+.sidebar-nav-link .arrow {
+    margin-right: auto;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-nav-link[aria-expanded="true"] .arrow {
+    transform: rotate(180deg);
+}
+
+/* Special items like "Change Fiscal Year" */
+.sidebar-nav-link.special-item {
+    background-color: #fff;
+    border: 1px solid #dfe1e6;
+    /* justify-content: space-between; is no longer needed here */
+}
+
+/* Sub-menu styles */
+.nav-submenu {
+    list-style: none;
+    padding-right: 1.5rem; /* Indent sub-menu items */
+    padding-top: 0.5rem;
+}
+
+.nav-submenu .sidebar-nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.nav-submenu .sidebar-nav-link::before {
+    content: "•";
+    color: #adb5bd;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Footer of the sidebar */
+.sidebar-footer {
+    padding-top: 1rem;
+    margin-top: auto; /* Pushes footer to the bottom */
+    border-top: 1px solid #e9ecef;
+}
+
+/* Responsive: Make sidebar smaller on smaller screens if needed */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 80px; /* Collapse sidebar */
+        overflow: hidden;
+    }
+    .sidebar:hover {
+        width: 260px; /* Expand on hover */
+    }
+    .sidebar .nav-text {
+        display: none; /* Hide text when collapsed */
+    }
+    .sidebar:hover .nav-text {
+        display: inline; /* Show text on hover */
+    }
+}
+
+/* =================================================================
+   Topbar Styles
+   ================================================================= */
+.topbar {
+    background-color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1020; /* Below sidebar on mobile, above content */
+}
+
+/* Topbar Search */
+.topbar-search {
+    position: relative;
+}
+
+.topbar-search .bi-search {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.topbar-search .form-control {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 20px;
+    padding-right: 2.5rem; /* Space for icon */
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.topbar-search .form-control:focus {
+    background-color: #fff;
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+    width: 350px;
+}
+
+/* Topbar Icons */
+.topbar-icons .topbar-icon-btn {
+    color: #6c757d;
+    font-size: 1.25rem;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.2s ease;
+}
+.topbar-icons .topbar-icon-btn:hover {
+    color: #212529;
+}
+
+/* =================================================================
+   Privacy Mode Styles
+   ================================================================= */
+
+/* When privacy mode is active, blur the main content */
+body.privacy-mode .main-content {
+    filter: blur(8px);
+    transition: filter 0.3s ease-in-out;
+    pointer-events: none; /* Disable interaction with blurred content */
+    user-select: none; /* Prevent text selection */
+}
+
+/* Also blur sensitive text in the topbar, but keep elements clickable */
+body.privacy-mode .topbar-search .form-control,
+body.privacy-mode .topbar .dropdown-toggle,
+body.privacy-mode .topbar .fw-bold,
+body.privacy-mode .topbar .text-muted.small {
+    filter: blur(5px);
+    transition: filter 0.3s ease-in-out;
+}
+
+
+/* =================================================================
+   Dashboard Specific Styles
+   ================================================================= */
+
+/* Quick Access Grid */
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.quick-access-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    color: #495057;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+.quick-access-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    color: #0052cc;
+}
+
+.quick-access-item .icon-wrapper {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: #6c757d;
+}
+
+.quick-access-item:hover .icon-wrapper {
+    color: #0052cc;
+}
+
+.quick-access-item.primary-action {
+    background-color: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+}
+
+.quick-access-item.primary-action .icon-wrapper {
+    color: #fff;
+}
+
+/* Summary Cards */
+.summary-card {
+    background-color: #fff;
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e9ecef;
+}
+
+.summary-card .card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-card .title {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+}
+
+.summary-card .amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+.summary-card .icon {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Chart Legend */
+.chart-legend-item {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem;
+}
+.chart-legend-item .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+.chart-legend-item .dot.sales {
+    background-color: #007bff;
+}
+.chart-legend-item .dot.purchase {
+    background-color: #ff4d4d;
+}
+
+.account-card-placeholder {
+    padding: 2rem 0;
+}
+
+/* =================================================================
+   Product Table Styles
+   ================================================================= */
+.table-products {
+    font-size: 13px;
+}
