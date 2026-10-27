@@ -1,0 +1,1617 @@
+body {
+    /* Use local Vazirmatn font with system fonts as fallback */
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: #fff; /* Light gray background from the image */
+}
+
+.lh-lg {
+    line-height: 1.8;
+}
+
+/* Override Bootstrap primary color for the add-to-cart button to match the image */
+.btn-primary {
+    --bs-btn-bg: #193c64;
+    --bs-btn-border-color: #193c64;
+    --bs-btn-hover-bg: #143050;
+    --bs-btn-hover-border-color: #143050;
+}
+
+/* --- (بازنویسی) استایل‌های انتخابگر رنگ محصول --- */
+/* استایل کلی دکمه‌های انتخاب رنگ */
+.variant-btn {
+    --tw-bg-opacity: 1;
+    border: 1px solid #e0e0e6; /* حاشیه خاکستری روشن */
+    background-color: #fff;
+    display: inline-flex;
+    align-items: center;
+    font-size: .75rem;
+    font-weight: 500;
+    color: rgb(102 102 102 / var(--tw-text-opacity, 1)); /* رنگ متن خاکستری */
+    justify-content: flex-start;
+    transition: border-color 0.2s ease;
+    padding: 4px 10px 4px 11px; 
+    min-width: 75px;
+}
+
+.variant-btn:hover {
+    border-color: #a0a0a0; /* تیره‌تر شدن حاشیه در حالت هاور */
+}
+
+/* استایل دکمه در حالت انتخاب شده */
+.btn-check:checked+.variant-btn {
+    border-color: #3f4064 !important; /* حاشیه سرمه‌ای مطابق تصویر */
+    background-color: #fff !important; /* (تغییر) جلوگیری از تغییر رنگ پس‌زمینه */
+    color: #666 !important;
+    box-shadow: none;
+}
+
+/* (جدید) استایل برای مربع رنگی */
+.variant-color {
+    position: relative; /* برای جای‌گذاری تیک */
+    height: 17px;
+    width: 17px;
+    border-radius: 5px;
+    margin-left: 7px;
+    display: block; /* برای اطمینان از اعمال صحیح ابعاد */
+    border: 1px solid rgba(0,0,0,0.1); /* حفظ حاشیه برای رنگ‌های روشن */
+}
+
+/* (جدید) افزودن تیک سفید به رنگ انتخاب شده */
+.btn-check:checked+.variant-btn .variant-color::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3e%3cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd' /%3e%3c/svg%3e");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.seller-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Make carousel thumbnails have a pointer cursor */
+.carousel button[data-bs-slide-to] {
+    cursor: pointer;
+    padding: 2px;
+    background-clip: content-box;
+}
+
+/* Add a border to the active carousel thumbnail */
+.carousel button[data-bs-slide-to].active {
+    border: 2px solid #0d6efd;
+    border-radius: 0.3rem;
+}
+
+/* (تغییر) افزایش عرض container-xl */
+.container-xl {
+    max-width: 1440px !important; /* یا هر مقدار دیگری که مد نظر دارید */
+}
+/* Purchase Box Styling */
+.purchase-box {
+    position: sticky;
+    top: 20px;
+}
+
+.seller-item.active, .seller-item:hover {
+    border-color: #0d6efd;
+    cursor: pointer;
+    background-color: #e9f2ff;
+    box-shadow: none; /* Remove the default shadow to match the image */
+}
+
+.seller-info-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+.seller-info-item i {
+    color: #a1a3a8; /* Grayer icon color to match the image */
+    margin-inline-end: 8px;
+    width: 16px;
+}
+
+/* Action icons above gallery */
+.action-icon {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* (جدید) جلوگیری از تغییر پس‌زمینه دکمه‌های اکشن در حالت فعال */
+.action-icon.active {
+    background-color: #fff !important;
+    color: var(--bs-btn-hover-color);
+    border-color: var(--bs-btn-hover-border-color);
+}
+
+/* (جدید) جلوگیری از تغییر پس‌زمینه دکمه‌های اکشن در حالت هاور */
+.action-icon:hover {
+    background-color: #fff !important;
+    color: var(--bs-btn-hover-border-color); /* استفاده از رنگ حاشیه برای آیکون */
+}
+
+/* (جدید) استایل سفارشی برای دکمه‌های اکشن بالای گالری محصول */
+.product-action-btn {
+    border-radius: 22% !important;
+    --bs-btn-border-color: #bdbdbd;
+    --bs-btn-color: #7d7f81;
+}
+
+
+/* Spec list styling */
+.spec-list {
+    font-size: 0.875rem;
+    padding-right: 0;
+}
+.spec-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.spec-list li:last-child {
+    border-bottom: none;
+}
+.spec-list .spec-key {
+    color: #6c757d;
+}
+
+/* Discount badge in purchase box */
+.discount-badge {
+    background-color: #ef394e;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.discount-badge span {
+    font-size: 1rem;
+}
+
+/* Final price color in purchase box */
+.price-section .h4 {
+    color: #3f4064 !important; /* Exact dark color from the image */
+}
+
+/* New Header Styles */
+.main-header {
+    margin-bottom: 1.5rem;
+}
+
+.search-form .form-control,
+.search-form .input-group-text {
+    background-color: #f0f0f1;
+    border-color: #f0f0f1;
+}
+
+.search-form .form-control:focus {
+    background-color: #fff;
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+}
+
+.main-nav .nav-link {
+    color: #3f4064;
+    font-size: 0.875rem;
+}
+
+.main-nav .nav-link:hover {
+    color: #0d6efd;
+}
+
+.main-nav .nav-link i {
+    color: #6c757d;
+}
+
+.main-nav .nav-link:hover i {
+    color: #0d6efd;
+}
+
+/* Breadcrumb Styling to match the image */
+.breadcrumb {
+    font-size: 0.8rem; /* Slightly smaller font size */
+    margin-bottom: 1.5rem; /* More space below the breadcrumb */
+}
+
+.breadcrumb-item a {
+    color: #6c757d; /* Muted gray for non-active links */
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    color: #0d6efd; /* Standard blue on hover */
+}
+
+.breadcrumb-item.active {
+    color: #3f4064; /* Darker color for the current page, matching the title */
+}
+
+/* Review Section Styles */
+.review-item:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+}
+
+/* Star Rating Input Styles */
+.rating-stars {
+    display: inline-block;
+    direction: ltr; /* Stars should be LTR */
+}
+
+.rating-stars > input {
+    display: none;
+}
+
+.rating-stars > label {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ddd;
+    float: right; /* To make it RTL-like */
+}
+
+.rating-stars > input:checked ~ label,
+.rating-stars:not(:checked) > label:hover,
+.rating-stars:not(:checked) > label:hover ~ label {
+    color: #f5b301;
+}
+
+/* Styles for Order Timeline */
+.order-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding-top: 20px;
+}
+
+.order-timeline::before {
+    content: '';
+    position: absolute;
+    top: 40px; /* Vertically center with the icon */
+    left: 5%;
+    right: 5%;
+    height: 4px;
+    background-color: #e9ecef;
+    z-index: 1;
+}
+
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100px; /* Adjust as needed */
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #e9ecef; /* Default inactive color */
+    border: 3px solid white;
+    transition: background-color 0.3s ease;
+}
+
+.timeline-step.active .timeline-icon {
+    /* The active color is set by the status_class from the database */
+}
+
+.timeline-label {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.timeline-step.active .timeline-label {
+    color: #212529;
+}
+
+/* Styles for Related Products on product.php (Single Row Scroll) */
+.related-products-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem; /* Space for scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.related-products-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+
+.related-product-item {
+    flex: 0 0 160px; /* Do not grow, do not shrink, base width 160px */
+    max-width: 160px;
+}
+.related-product-item .card-title {
+    font-size: 0.75rem; /* Smaller font for title */
+}
+
+/* Styles for color swatches on product card */
+.product-card-color-swatch {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+}
+
+/* New Product Card Styles to match 3333.jpg */
+.product-card {
+    border: 1px solid #f0f0f1;
+    transition: box-shadow 0.2s ease-in-out;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 2px 2px 2px;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.product-card-banner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #ef394e;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.product-card-img-container {
+    position: relative;
+    padding: 1rem;
+}
+
+.product-card .card-img-top {
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.product-card-colors {
+    display: flex;
+    justify-content: flex-end; /* (تغییر) چینش از سمت راست */
+    gap: 0.5rem; /* (تغییر) فاصله بین دایره‌ها */
+    padding: 0.5rem 1rem 0 1rem; /* (جدید) ایجاد فاصله از اطراف */
+    border-top: 1px solid #f0f0f1; /* (جدید) خط جداکننده بالای رنگ‌ها */
+    margin-top: -1rem; /* (جدید) بالا بردن رنگ‌ها برای چسبیدن به عکس */
+    position: relative; /* (جدید) برای حفظ جایگاه */
+}
+
+.product-card-features {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid #f0f0f1;
+    width: 100%;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7rem;
+    color: #767790;
+}
+
+.feature-item i {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.product-card .card-body {
+    padding: 0.5rem 1rem 1rem 1rem;
+    flex-grow: 1;
+}
+
+.product-card-title {
+    font-size: 0.8rem;
+    color: #3f4064;
+    font-weight: 400;
+    line-height: 1.7;
+    height: 74px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    padding-top: 0.4rem;
+}
+
+.product-card-rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 0.8rem;
+    color: #767790;
+}
+
+.product-card-rating .fa-star {
+    color: #f9bc00;
+    margin-left: 0.25rem;
+}
+
+.product-card-price {
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+.product-card-price .discount-badge {
+    background-color: #ef394e;
+    color: white;
+    padding: 0.1rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.product-card-price .price-amount {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #3f4064;
+}
+
+.product-card-price .price-currency {
+    font-size: 0.7rem;
+    margin-right: 0.25rem;
+    color: #3f4064;
+}
+
+.product-card-price .old-price {
+    display: block;
+    text-align: left;
+    color: #c0c2c5;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    height: 19px;
+}
+
+/* Compare Bar Styles */
+.compare-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 1035; /* بالاتر از محتوای صفحه */
+    transform: translateY(100%);
+    animation: slide-up 0.3s forwards;
+}
+
+@keyframes slide-up {
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* (اصلاح) استایل برای آیتم‌های نوار مقایسه */
+.compare-bar-items {
+    display: flex;
+    gap: 0.75rem; /* فاصله بین آیتم‌ها */
+    align-items: center;
+}
+
+.compare-item {
+    width: 60px;  /* عرض ثابت برای کادر عکس */
+    height: 60px; /* ارتفاع ثابت برای کادر عکس */
+    border: 1px solid #e0e0e0;
+    border-radius: 0.375rem; /* گرد کردن گوشه‌ها */
+    overflow: hidden; /* بخش‌های اضافی عکس را پنهان می‌کند */
+    flex-shrink: 0; /* جلوگیری از کوچک شدن آیتم */
+}
+
+.compare-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* عکس را برای پر کردن کادر تنظیم می‌کند */
+}
+
+/* Color Filter Styles */
+.color-filter-container {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.color-filter-item .form-check-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.color-filter-swatch {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 8px;
+    border: 1px solid #ddd;
+}
+.color-filter-item .form-check-input:checked + .form-check-label .color-filter-swatch {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px var(--bs-primary);
+}
+
+/* (جدید) استایل برای اسکرول شدن لیست فیلترها */
+.filter-container {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* (جدید) استایل برای دکمه‌های مرتب‌سازی */
+.nav-pills-sm .nav-link {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    color: #6c757d;
+    background-color: #f0f0f1;
+    margin-left: 0.5rem;
+}
+
+.nav-pills-sm .nav-link.active {
+    color: #0d6efd;
+    background-color: #e7f1ff;
+}
+
+/* (جدید) استایل‌های بخش توضیحات محصول با قابلیت نمایش بیشتر/کمتر */
+.product-description-wrapper.collapsible {
+    position: relative;
+    padding-bottom: 40px; /* فضا برای دکمه */
+}
+
+.product-description-wrapper.collapsible .product-description-content {
+    max-height: 200px; /* ارتفاع اولیه در حالت بسته */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.4s ease-out;
+}
+
+.product-description-wrapper.collapsible .description-overlay {
+    position: absolute;
+    bottom: 40px; /* بالای دکمه */
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, white, rgba(255, 255, 255, 0));
+    pointer-events: none; /* اجازه کلیک روی متن زیرین را می‌دهد */
+    transition: opacity 0.3s ease;
+}
+
+.product-description-wrapper.collapsible .show-more-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.product-description-wrapper.expanded .product-description-content {
+    max-height: 2000px; /* ارتفاع در حالت باز (یک عدد بزرگ) */
+}
+
+.product-description-wrapper.expanded .description-overlay {
+    opacity: 0;
+}
+
+/* (جدید) استایل‌های بخش توضیحات محصول با قابلیت نمایش بیشتر/کمتر */
+.product-description-wrapper.collapsible {
+    position: relative;
+    padding-bottom: 40px; /* فضا برای دکمه */
+}
+
+.product-description-wrapper.collapsible .product-description-content {
+    max-height: 200px; /* ارتفاع اولیه در حالت بسته */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.4s ease-out;
+}
+
+.product-description-wrapper.collapsible .description-overlay {
+    position: absolute;
+    bottom: 40px; /* بالای دکمه */
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, white, rgba(255, 255, 255, 0));
+    pointer-events: none; /* اجازه کلیک روی متن زیرین را می‌دهد */
+    transition: opacity 0.3s ease;
+}
+
+.product-description-wrapper.collapsible .show-more-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.product-description-wrapper.expanded .product-description-content {
+    max-height: 2000px; /* ارتفاع در حالت باز (یک عدد بزرگ) */
+}
+
+.product-description-wrapper.expanded .description-overlay {
+    opacity: 0;
+}
+
+/* (جدید) استایل‌های بخش پرسش و پاسخ */
+.qna-item:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+}
+
+.qna-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+.question-icon { background-color: #6c757d; }
+.answer-icon { background-color: #0d6efd; }
+
+/* (جدید) استایل برای اسکرول افقی محصولات */
+.horizontal-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem; /* فاصله بین کارت‌ها */
+    padding-bottom: 1rem; /* فضا برای اسکرول‌بار */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+    display: none; /* مخفی کردن اسکرول‌بار */
+}
+
+.horizontal-scroll-item {
+    flex: 0 0 300px; /* عرض ثابت برای هر کارت */
+    max-width: 300px;
+}
+
+
+
+/* (جدید) استایل برای اسکرول افقی محصولات */
+.horizontal-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem; /* فاصله بین کارت‌ها */
+    padding-bottom: 1rem; /* فضا برای اسکرول‌بار */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+    display: none; /* مخفی کردن اسکرول‌بار */
+}
+
+.horizontal-scroll-item {
+    flex: 0 0 300px; /* عرض ثابت برای هر کارت */
+    max-width: 300px;
+}
+
+/* (جدید) استایل‌های مگامنو */
+.mega-menu-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 900px;
+    background-color: #fff;
+    border: 1px solid #e0e0e6;
+    border-top: none;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 1021; /* بالاتر از سایر محتوا */
+    display: none; /* به صورت پیش‌فرض مخفی */
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+#mega-menu-container:hover .mega-menu-dropdown {
+    display: block;
+}
+
+.mega-menu-main-cats {
+    padding: 0.5rem 0;
+    border-left: 1px solid #f0f0f1;
+    height: 100%;
+}
+
+.mega-menu-main-cats li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: #3f4064;
+    font-size: 0.875rem;
+    border-right: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.mega-menu-main-cats li:hover a,
+.mega-menu-main-cats li.active a {
+    background-color: #f8f8f8;
+    border-right-color: #ef394e; /* رنگ قرمز */
+    color: #ef394e;
+}
+
+.mega-menu-main-cats li a .fa-chevron-left {
+    color: #a1a3a8;
+    margin-top: 4px;
+}
+
+.mega-menu-sub-cats {
+    padding: 1.5rem;
+    height: 100%;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+.sub-cat-content {
+    display: none;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.sub-cat-content.active {
+    display: flex;
+}
+
+.sub-cat-group {
+    width: 33.33%;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.sub-cat-title {
+    font-weight: bold;
+    color: #3f4064;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.sub-cat-group ul li a {
+    color: #5a5c7a;
+    text-decoration: none;
+    font-size: 0.85rem;
+    display: block;
+    padding: 0.3rem 0;
+}
+
+.sub-cat-group ul li a:hover {
+    color: #ef394e;
+}
+
+/* (جدید) استایل‌های نوار مرتب‌سازی در صفحه محصولات */
+.sort-bar {
+    background-color: #f8f9fa; /* رنگ پس‌زمینه روشن */
+    border: 1px solid #e9ecef;
+}
+
+.sort-bar .fa-sort-amount-down {
+    color: #6c757d;
+}
+
+.sort-link {
+    font-size: 0.8rem;
+    color: #6c757d;
+    padding: 0.25rem 0.5rem;
+}
+
+.sort-link.active {
+    color: #3f4064;
+    font-weight: 700;
+    background-color: transparent !important;
+}
+
+
+/* (جدید) استایل‌های کادر جستجوی پیشرفته */
+.search-container .search-form .form-control,
+.search-container .search-form .input-group-text {
+    background-color: #f0f0f1;
+    border-color: #f0f0f1;
+    transition: all 0.2s ease-in-out;
+}
+
+.search-container .search-form .form-control:focus {
+    background-color: #fff;
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+    z-index: 1057; /* بالاتر از هدر و پایین‌تر از مودال‌ها */
+}
+
+.search-suggestions-box {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 0 0 0.5rem 0.5rem;
+    z-index: 1056; /* پایین‌تر از اینپوت فوکوس شده */
+    display: none; /* به صورت پیش‌فرض مخفی */
+    margin-top: -1px;
+}
+
+.search-container .form-control:focus + .search-suggestions-box,
+.search-suggestions-box:hover {
+    display: block;
+}
+.search-container:focus-within .search-suggestions-box {
+    display: block;
+}
+
+/* (جدید) استایل‌های نتایج جستجوی زنده */
+#live-search-results .list-group-item {
+    border: none;
+    border-bottom: 1px solid #f0f0f1;
+    padding: 0.5rem 1rem;
+}
+
+#live-search-results .list-group-item:last-child {
+    border-bottom: none;
+}
+
+#live-search-results .list-group-item-action:hover {
+    background-color: #f8f9fa;
+}
+
+#live-search-results img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+#live-search-results .product-name {
+    font-size: 0.85rem;
+    color: #3f4064;
+}
+
+/* (جدید) استایل برای بخش دسته‌بندی‌های محبوب */
+.hover-shadow-sm {
+    transition: box-shadow 0.2s ease-in-out;
+}
+.hover-shadow-sm:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+/* (جدید) استایل برای بخش دسته‌بندی‌های محبوب */
+.hover-shadow-sm {
+    transition: box-shadow 0.2s ease-in-out;
+}
+.hover-shadow-sm:hover {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+/* (جدید) استایل‌های فوتر با پس‌زمینه گرادیان */
+footer.main-footer {
+    background-image: linear-gradient(90deg, #0079b1, #1b3570);
+    color: #fff; /* padding is now handled by bootstrap classes */
+}
+
+footer.main-footer h5 {
+    color: #fff;
+}
+
+footer.main-footer .text-muted {
+    color: #e0e0e0 !important; /* رنگ خاکستری روشن برای متن‌های فرعی */
+}
+
+footer.main-footer .link-secondary {
+    color: #f0f0f0 !important; /* رنگ روشن برای لینک‌ها */
+}
+
+footer.main-footer .link-secondary:hover {
+    color: #fff !important; /* سفید شدن لینک‌ها در حالت هاور */
+}
+
+footer.main-footer .border-top {
+    border-color: rgba(255, 255, 255, 0.2) !important; /* روشن‌تر کردن خط جداکننده */
+}
+
+/* (جدید) استایل‌های اختصاصی برای فیلتر در صفحه محصولات */
+#filterAccordion .form-check-label {
+    font-size: 0.84rem;
+}
+
+#filterAccordion .accordion-button {
+    font-size: 0.9rem;
+}
+
+/* (جدید) استایل سفارشی برای آیتم فعال در سایدبار حساب کاربری */
+.list-group-item.active {
+    background-color: #e7f1ff; /* رنگ پس‌زمینه آبی روشن */
+    color: #0d6efd; /* رنگ متن آبی اصلی */
+    border-color: #cfe2ff; /* رنگ حاشیه هماهنگ */
+}
+
+.list-group-item.active i {
+    color: #0d6efd !important; /* اطمینان از تغییر رنگ آیکون */
+}
+
+/* (جدید) انیمیشن هاور برای آیتم‌های سایدبار */
+.list-group-item-action {
+    transition: background-color 0.2s ease-in-out, padding-right 0.2s ease-in-out;
+}
+
+.list-group-item-action:not(.active):hover {
+    background-color: #f8f9fa; /* رنگ خاکستری بسیار روشن برای هاور */
+    padding-right: 22px !important; /* مقدار اصلی 17px + 5px جابجایی */
+}
+
+/* (جدید) استایل برای عنوان بخش‌های پروفایل */
+.profile-section-title {
+    position: relative;
+    padding-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.profile-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #ef394e; /* رنگ قرمز */
+}
+
+/* (جدید) استایل‌های صفحه اطلاعات حساب کاربری */
+.profile-info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-info-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.profile-info-item:last-child {
+    border-bottom: none;
+}
+
+.profile-info-item .info-key {
+    color: #767790; /* رنگ خاکستری */
+    font-size: 0.8rem;
+}
+
+.profile-info-item .info-value {
+    color: #3f4064; /* رنگ سرمه‌ای */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.profile-info-item .action-icon {
+    color: #a1a3a8;
+    font-size: 1.2rem;
+}
+
+/* (جدید) استایل برای لینک‌های آیکون ویرایش/افزودن */
+.profile-info-item a.action-icon {
+    text-decoration: none;
+    color: #a1a3a8;
+    transition: color 0.2s ease;
+}
+.profile-info-item a.action-icon:hover {
+    color: #3f4064;
+}
+
+/* (جدید) استایل‌های نوار پیشرفت تسویه حساب */
+.checkout-progress-bar {
+    display: flex;
+    justify-content: space-around;
+    width: 42%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    padding: 1.2rem 3rem;
+    border-radius: 1.9rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.progress-icon-wrapper {
+    text-decoration: none;
+}
+
+.progress-icon-wrapper.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+.progress-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f1; /* رنگ غیرفعال */
+    color: #a1a3a8;
+    border: 3px solid #f0f0f1;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.progress-label {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #6c757d; /* خاکستری */
+    font-weight: 500;
+}
+
+.progress-step.active .progress-icon,
+.progress-step.completed .progress-icon {
+    background-color: #e7f1ff; /* آبی روشن */
+    color: #0d6efd; /* آبی اصلی */
+    border-color: #0d6efd;
+}
+
+.progress-step.active .progress-label {
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+.progress-connector {
+    flex-grow: 1;
+    height: 4px;
+    background-color: #f0f0f1; /* رنگ غیرفعال */
+    margin: 28px -20px 0; /* تنظیم موقعیت عمودی و افقی */
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.progress-connector.completed {
+    background-color: #0d6efd; /* آبی */
+}
+
+/* (جدید) استایل‌های کارت آیتم در سبد خرید */
+.cart-item-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e6;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.cart-item-image {
+    flex-shrink: 0;
+}
+
+.cart-item-image img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #3f4064;
+    text-decoration: none;
+}
+
+.cart-item-title:hover {
+    color: #0d6efd;
+}
+
+.cart-item-info {
+    font-size: 0.8rem;
+    color: #767790;
+    display: flex;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.cart-item-info i {
+    margin-left: 6px;
+    font-size: 1rem;
+}
+
+.cart-item-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e6;
+    border-radius: 0.5rem;
+}
+
+.quantity-selector .btn {
+    color: #ef394e; /* رنگ قرمز */
+    font-size: 1.2rem;
+}
+
+.quantity-selector .quantity-input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    background: none;
+    font-weight: 500;
+    color: #3f4064;
+    -moz-appearance: textfield; /* مخفی کردن فلش‌های پیش‌فرض در فایرفاکس */
+}
+
+.quantity-selector .quantity-input::-webkit-outer-spin-button,
+.quantity-selector .quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cart-item-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #3f4064;
+}
+
+/* (جدید) استایل‌های صفحه تسویه حساب (checkout.php) */
+.checkout-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e6;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.checkout-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.checkout-card-header h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #3f4064;
+    margin-bottom: 0;
+}
+
+.checkout-card-header a {
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.address-item, .shipping-method-item {
+    padding: 9px 1rem 5px 1rem;
+    border: 1px solid #e0e0e6;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.address-item:not(:last-child), .shipping-method-item:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.shipping-method-item {
+    /* display: flex and align-items: center are now handled by Bootstrap's .row and .align-items-center classes */
+}
+
+.address-item:hover, .shipping-method-item:hover {
+    border-color: #a0a0a0;
+}
+
+.address-item.selected, .shipping-method-item.selected {
+    border-color: #0d6efd;
+    background-color: #f8faff;
+    box-shadow: 0 0 0 1px #0d6efd;
+}
+
+.address-item .form-check-input {
+    position: absolute; /* فقط برای آدرس */
+    top: 1rem;
+    right: 1rem;
+    margin: 0;
+}
+.shipping-method-item .form-check-input {
+    margin-left: 1rem; /* فاصله از محتوای کناری */
+}
+
+.shipping-method-item .cost {
+    color: #5a5c7a;
+    font-weight: 500;
+}
+
+/* (جدید) استایل‌های بخش انتخاب زمان ارسال */
+.shipping-method-container:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.shipping-method-item {
+    margin-bottom: 0 !important; /* برای چسبیدن به آکاردئون */
+}
+
+.shipping-method-item[aria-expanded="true"] {
+    border-color: #0d6efd;
+    background-color: #f8faff;
+    box-shadow: 0 0 0 1px #0d6efd;
+    border-bottom-left-radius: 0; /* (جدید) تیز کردن گوشه پایین چپ در حالت باز */
+    border-bottom-right-radius: 0; /* (جدید) تیز کردن گوشه پایین راست در حالت باز */
+}
+
+.time-slot-box {
+    border: 2px solid #0d6efd;
+    border-top: none;
+    padding: 1.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background-color: #f8faff;
+}
+
+.date-slot-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #e0e0e6;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.date-slot-item:hover {
+    border-color: #a0a0a0;
+}
+
+.date-slot-item input:checked + span + span + span {
+    /* This is a trick to select the parent label in CSS */
+    /* We will use JS to add a class to the label itself */
+}
+
+.date-slot-item.selected {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 1px #0d6efd;
+}
+
+.date-slot-item .day-name { font-size: 0.8rem; color: #6c757d; }
+.date-slot-item .day-number { font-size: 1.1rem; font-weight: 700; color: #3f4064; }
+.date-slot-item .month-name { font-size: 0.8rem; color: #6c757d; }
+
+.time-slot-option {
+    border: 1px solid #e0e0e6;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.time-slot-option input:checked + span {
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+/* (جدید) استایل برای بازه زمانی انتخاب شده */
+.time-slot-option.selected {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 1px #0d6efd;
+}
+
+/* (جدید) استایل برای بازه زمانی انتخاب شده */
+.time-slot-option.selected {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 1px #0d6efd;
+}
+
+/* (جدید) استایل برای بازه زمانی غیرفعال */
+.time-slot-option.disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* (جدید) استایل برای لیبل غیرفعال */
+.time-slot-option.disabled {
+    pointer-events: none;
+}
+
+/* (جدید) انیمیشن نرم‌تر برای باز و بسته شدن آکاردئون */
+.accordion-collapse.collapsing {
+    transition: height 0.4s ease-in-out;
+}
+
+/* (جدید) استایل برای آیتم‌های ارسال غیرفعال */
+.shipping-method-item.disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* (جدید) استایل‌های بخش انتخاب شیوه پرداخت در payment.php */
+.payment-tabs {
+    border: 1px solid #e0e0e6;
+    border-radius: 0.5rem;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-tabs .nav-item {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.payment-tabs .nav-link {
+    width: 100%;
+    border-radius: 0.3rem;
+    color: #3f4064;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.payment-tabs .nav-link.active {
+    background-color: #fff;
+    border-color: #0d6efd;
+    color: #0d6efd;
+}
+
+.payment-option-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e6;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.payment-option-item:hover {
+    border-color: #a0a0a0;
+}
+
+.payment-option-item input:checked + * {
+    /* We use JS or direct sibling selectors if possible, but for now we style the parent on check */
+}
+
+.payment-option-item:has(input:checked) {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 1px #0d6efd;
+}
+
+.payment-option-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-left: 1rem;
+}
+
+.payment-option-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-option-item .form-check-input {
+    margin-right: auto; /* Pushes the radio button to the far right */
+}
+
+/* (جدید) استایل برای آیکون‌های فونت‌آسام در گزینه‌های پرداخت */
+.payment-option-item > i {
+    width: 48px;
+}
+
+/* (جدید) استایل‌های کارت خلاصه سفارش در صفحه پرداخت */
+.summary-card {
+    padding: 1rem;
+}
+
+.summary-card hr {
+    margin: 1rem 0;
+    color: #f0f0f1;
+}
+
+.summary-item {
+    font-size: 0.9rem;
+}
+
+.summary-card .h5 {
+    font-weight: 700;
+}
+
+/* (جدید) استایل برای دکمه آکاردئون مشاهده کالاها */
+.summary-card .accordion-button {
+    padding: 0.75rem 0;
+    background-color: transparent;
+    box-shadow: none;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* (جدید) استایل برای آیتم‌های داخل مودال مشاهده سفارش */
+.invoice-modal .modal-content {
+    border-radius: 0.75rem;
+    border: none;
+}
+
+.invoice-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.invoice-table {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+}
+
+.invoice-table th {
+    color: #6c757d;
+    font-weight: 500;
+    border-bottom-width: 1px;
+    padding: 1rem 1.5rem;
+}
+
+.invoice-table td {
+    vertical-align: middle;
+    padding: 0.75rem 1.5rem;
+}
+
+.invoice-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.modal-item-image {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border: 1px solid #f0f0f1;
+    border-radius: 0.375rem;
+    flex-shrink: 0;
+}
+
+.invoice-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+/* (جدید) استایل برای دکمه مشاهده آیتم‌های سفارش */
+.btn-subtle-viewer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+    background-color: #f8f9fa;
+    border: 1px solid #f0f0f1;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+.category-grid-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0.375rem;
+    transition: transform 0.3s 
+ease;
+}
+.category-grid-image-top{
+    max-height: 120px;
+    width: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+}
+.category-grid-link{
+    font-size: 0.85rem;
+    color: var(--bs-primary);
+}
+
+/* (جدید) استایل‌های پیش‌نمایش سبد خرید */
+.cart-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-preview-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; /* تراز کردن با سمت چپ دکمه (مناسب برای هدر RTL که دکمه سمت چپ است) */
+    width: 300px;
+    background-color: #fff;
+    z-index: 1060; /* بالاتر از سایر المان‌ها */
+    padding: 1rem;
+    border: 1px solid rgba(0,0,0,.1);
+    animation: fadeIn 0.2s ease-in-out;
+    cursor: default;
+}
+
+.cart-dropdown:hover .cart-preview-box {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cart-preview-items {
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.cart-preview-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.cart-preview-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 0.25rem;
+    border: 1px solid #f0f0f1;
+}
+
+/* مخفی کردن در موبایل */
+@media (max-width: 991.98px) {
+    .cart-preview-box {
+        display: none !important;
+    }
+}
