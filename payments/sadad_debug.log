@@ -1,0 +1,68 @@
+[2025-12-16 17:23:04] --- New Payment Request ---
+[2025-12-16 17:23:04] Terminal ID: 24096572
+[2025-12-16 17:23:04] Order ID: 114
+[2025-12-16 17:23:04] Amount (Rials): 150000
+[2025-12-16 17:23:04] String to be signed: 24096572;114;150000
+[2025-12-16 17:23:04] Generated SignData: 55aY0P8esUTwoxuIuaT4wxYmEuhrKKjXYyNpqtDatlY=
+[2025-12-16 17:23:04] API Response: {"ResCode":"1025","Token":null,"Description":"اطلاعات SignData ارسالی اشتباه است"}
+[2025-12-16 17:23:04] Error: اطلاعات SignData ارسالی اشتباه است (Code: 1025)
+[2025-12-16 17:23:11] --- New Payment Request ---
+[2025-12-16 17:23:11] Terminal ID: 24096572
+[2025-12-16 17:23:11] Order ID: 115
+[2025-12-16 17:23:11] Amount (Rials): 150000
+[2025-12-16 17:23:11] String to be signed: 24096572;115;150000
+[2025-12-16 17:23:11] Generated SignData: BAu/jaGtC9bgP5XD7N532bSS6yf+ma7rKEYgK+f6aN8=
+[2025-12-16 17:23:11] API Response: {"ResCode":"1025","Token":null,"Description":"اطلاعات SignData ارسالی اشتباه است"}
+[2025-12-16 17:23:11] Error: اطلاعات SignData ارسالی اشتباه است (Code: 1025)
+[2025-12-16 17:29:32] --- New Payment Request ---
+[2025-12-16 17:29:32] Terminal ID: 24096572
+[2025-12-16 17:29:32] Order ID: 116
+[2025-12-16 17:29:32] Amount (Rials): 150000
+[2025-12-16 17:29:32] String to be signed: 24096572;116;150000
+[2025-12-16 17:29:32] Generated SignData: w9UOA28KAMNF5Yiglgd13ai753sv6QGS
+[2025-12-16 17:29:32] API Response: {"ResCode":"1025","Token":null,"Description":"اطلاعات SignData ارسالی اشتباه است"}
+[2025-12-16 17:29:32] Error: اطلاعات SignData ارسالی اشتباه است (Code: 1025)
+[2025-12-16 17:57:42] --- New Payment Request ---
+[2025-12-16 17:57:42] Terminal ID: 24096572
+[2025-12-16 17:57:42] Order ID: 118
+[2025-12-16 17:57:42] Amount (Rials): 150000
+[2025-12-16 17:57:42] String to be signed: 24096572;118;150000
+[2025-12-16 17:57:42] Generated SignData: w9UOA28KAMPutvoLybY1Jqi753sv6QGS
+[2025-12-16 17:57:42] API Response: {"ResCode":"1025","Token":null,"Description":"اطلاعات SignData ارسالی اشتباه است"}
+[2025-12-16 17:57:42] Error: اطلاعات SignData ارسالی اشتباه است (Code: 1025)
+[2025-12-17 11:11:41] --- New Payment Request ---
+[2025-12-17 11:11:41] Terminal ID: 24096572
+[2025-12-17 11:11:41] Order ID: 123
+[2025-12-17 11:11:41] Amount (Rials): 150000
+[2025-12-17 11:11:41] String to be signed: 24096572;123;150000
+[2025-12-17 11:11:41] Generated SignData: w9UOA28KAMPNUzJaMWxkIai753sv6QGS
+[2025-12-17 11:11:41] API Response: {"ResCode":"1025","Token":null,"Description":"اطلاعات SignData ارسالی اشتباه است"}
+[2025-12-17 11:11:41] Error: اطلاعات SignData ارسالی اشتباه است (Code: 1025)
+[2025-12-17 12:42:59] --- New Payment Request ---
+[2025-12-17 12:42:59] Terminal ID: 24096572
+[2025-12-17 12:42:59] Order ID: 125
+[2025-12-17 12:42:59] Amount (Rials): 150000
+[2025-12-17 12:42:59] String to be signed: 24096572;125;150000
+[2025-12-17 12:42:59] Generated SignData: m/83iizc2bieOS0HwxUIxd3GCY0/mYyZ
+[2025-12-17 12:42:59] API Response: {"ResCode":"0","Token":"0001FA1F8E9DB87E3FA1F31E44DCBA8479BA319840C3BDBDAC1E","Description":"عملیات با موفقیت انجام شد"}
+[2025-12-17 12:43:16] --- New Payment Request ---
+[2025-12-17 12:43:16] Terminal ID: 24096572
+[2025-12-17 12:43:16] Order ID: 126
+[2025-12-17 12:43:16] Amount (Rials): 150000
+[2025-12-17 12:43:16] String to be signed: 24096572;126;150000
+[2025-12-17 12:43:16] Generated SignData: m/83iizc2bjjjSJOdZcQy93GCY0/mYyZ
+[2025-12-17 12:43:16] API Response: {"ResCode":"0","Token":"0001FA1F8E9DB87E3FA15ECB01932C899CD7E7EA4BB314980591","Description":"عملیات با موفقیت انجام شد"}
+[2025-12-17 12:43:32] --- New Payment Request ---
+[2025-12-17 12:43:32] Terminal ID: 24096572
+[2025-12-17 12:43:32] Order ID: 127
+[2025-12-17 12:43:32] Amount (Rials): 150000
+[2025-12-17 12:43:32] String to be signed: 24096572;127;150000
+[2025-12-17 12:43:32] Generated SignData: m/83iizc2bghHq0cu1Uk7t3GCY0/mYyZ
+[2025-12-17 12:43:32] API Response: {"ResCode":"0","Token":"0001FA1F8E9DB87E3FA15ECB01932C899CD737F899D4CD4A0816","Description":"عملیات با موفقیت انجام شد"}
+[2025-12-17 21:25:23] --- New Payment Request ---
+[2025-12-17 21:25:23] Terminal ID: 24096572
+[2025-12-17 21:25:23] Order ID: 129
+[2025-12-17 21:25:23] Amount (Rials): 150000
+[2025-12-17 21:25:23] String to be signed: 24096572;129;150000
+[2025-12-17 21:25:23] Generated SignData: m/83iizc2biAgt3vXlWFS93GCY0/mYyZ
+[2025-12-17 21:25:23] API Response: {"ResCode":"0","Token":"0001FA1F8E9DB87E3FA19A865BAA366E1B4B55DF3002BA291F5C","Description":"عملیات با موفقیت انجام شد"}
